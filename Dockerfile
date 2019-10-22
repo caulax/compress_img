@@ -2,10 +2,9 @@ FROM python:3.7-alpine3.9
 
 WORKDIR /opt/app/
 
-RUN mkdir app/uploads
-
 COPY src/ ./
 COPY requirements.txt ./requirements.txt
+RUN mkdir app/uploads
 
 RUN apk update && apk add build-base python-dev py-pip jpeg-dev zlib-dev
 
