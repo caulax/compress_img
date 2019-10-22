@@ -2,6 +2,8 @@ FROM python:3.7-alpine3.9
 
 WORKDIR /opt/app/
 
+RUN mkir app/uploads
+
 COPY src/ ./
 COPY requirements.txt ./requirements.txt
 
@@ -14,4 +16,4 @@ ENV FLASK_APP=run.py
 
 EXPOSE 5000
 
-CMD "flask run"
+CMD ["flask", "run", "--host", "0.0.0.0", "--port", "5000"]
