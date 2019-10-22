@@ -2,7 +2,7 @@ FROM python:3.7-alpine3.9
 
 WORKDIR /opt/app/
 
-RUN mkir app/uploads
+RUN mkdir app/uploads
 
 COPY src/ ./
 COPY requirements.txt ./requirements.txt
